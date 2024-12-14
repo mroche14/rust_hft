@@ -1,0 +1,9 @@
+[package]
+name = "core_pipeline"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common = { path = "../common" }
+crossbeam = "0.8.4"       # Lock-free data structures
+smallvec = "2.0.0-alpha.8"       # Small vector optimization

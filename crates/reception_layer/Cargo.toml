@@ -1,0 +1,8 @@
+[package]
+name = "reception_layer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common = { path = "../common" } # Shared utilities
+tokio = { version = "1.42.0", features = ["full"] } # Async networking

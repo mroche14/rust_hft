@@ -1,0 +1,25 @@
+[package]
+name = "ultra_low_latency_cbuf"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+description = "An ultra-low-latency circular buffer system with advanced Linux-specific optimizations"
+repository = "https://example.com/your-repo"
+
+
+[build-dependencies]
+cc = "1.0"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+libc = "0.2"
+memmap2 = "0.9.5"
+parking_lot = "0.12"
+rand = "0.8"
+numas = "0.2.7" 
+ctrlc = "3.4.5"
+
+[features]
+numa = []

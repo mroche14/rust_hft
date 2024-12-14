@@ -1,0 +1,9 @@
+[package]
+name = "analytics_pipeline"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common = { path = "../common" }
+statrs = "0.18.0"         # Statistical computations
+ndarray = "0.16.1"        # Numeric arrays for analytics

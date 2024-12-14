@@ -1,0 +1,32 @@
+{
+    "buffer": {
+      "num_rows": 500,
+      "num_cols": 4,
+      "columns": [
+        {"name": "timestamp", "type": "f64"},
+        {"name": "value1", "type": "f64"},
+        {"name": "value2", "type": "f64"},
+        {"name": "delta_value", "type": "f64", "delta_encoding": true}
+      ]
+    },
+    "os_optimization": {
+        "use_huge_pages": true,
+        "lock_memory": true,
+        "realtime_priority": 10,
+        "cpu_affinity": 0,
+        "numa_node": 0,
+        "disable_numa": true
+    },
+    "rdma": {
+      "enable": false
+    },
+    "prefetching": {
+      "enabled": true,
+      "distance": 64
+    },
+    "profiling": {
+      "enable": true,
+      "output_path": "profiling.json"
+    }
+  }
+  

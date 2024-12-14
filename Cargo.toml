@@ -1,0 +1,46 @@
+[workspace]
+members = [
+    "crates/reception_layer",
+    "crates/core_pipeline",
+    "crates/storage_pipeline",
+    "crates/analytics_pipeline",
+    "crates/protocols",
+    "crates/common",
+    "crates/benches",
+    "crates/optim_circular_buffer",
+    ".",
+]
+resolver = "2"  # Use resolver v2 for better dependency resolution and 2021 edition compatibility
+
+[profile.release]
+# Optimize for performance in release builds
+opt-level = "z"       # Optimize for size (adjust to "3" for maximum speed if size isn't critical)
+lto = "fat"           # Perform Link-Time Optimization for better performance
+codegen-units = 1     # Reduce codegen units to optimize for single-threaded performance
+panic = "abort"       # Abort on panic to reduce binary size
+overflow-checks = false # Disable overflow checks in release mode for performance
+strip = "debuginfo"   # Strip debugging information (adjust if you need symbols for profiling)
+
+[profile.dev]
+# Default settings for development profile
+opt-level = 0         # No optimization (debug-friendly)
+debug = true          # Enable debug symbols
+incremental = true    # Enable incremental compilation
+
+[build]
+# Customize the build directory
+target-dir = "target" # Define where to store the build output (default: "target")
+
+
+[package]
+name = "hft_rust_agg"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common = { path = "crates/common" }
+core_pipeline = { path = "crates/core_pipeline" }
+reception_layer = { path = "crates/reception_layer" }
+storage_pipeline = { path = "crates/storage_pipeline" }
+analytics_pipeline = { path = "crates/analytics_pipeline" }
+protocols = { path = "crates/protocols" }

@@ -1,0 +1,16 @@
+[package]
+name = "benches"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+# Define a library target to satisfy workspace requirements
+path = "src/lib.rs"
+
+[[bench]]
+# Define a benchmark target
+name = "latency_bench"
+path = "src/latency_bench.rs"
+
+[dependencies]
+criterion = "0.5.1" # Benchmarking library for advanced performance testing

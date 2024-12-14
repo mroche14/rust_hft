@@ -1,0 +1,9 @@
+[package]
+name = "storage_pipeline"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common = { path = "../common" }
+memmap2 = "0.9.5"         # Memory-mapped files
+tokio = { version = "1.42.0", features = ["full"] } # Async operations
